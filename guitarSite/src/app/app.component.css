@@ -1,0 +1,286 @@
+body {
+  background-color: #F3F3F3;
+}
+
+.li {
+}
+
+.h3 {
+  text-align: center;
+}
+
+.h {
+  text-align: center;
+  color: white;
+}
+
+.header-img {
+  height: 45px;
+  margin-right: 10px;
+}
+
+.header-text {
+  font-weight: 700;
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+.header-text:hover {
+  color: #F14635;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 150px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #252525;
+  border: none;
+  color: white;
+  width: 360px;
+  font-weight: 700;
+  border-radius: 2px;
+  font-size: 20px;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.button:hover {
+  border: none;
+  background-color: #F14635;
+  transition: 0.4s;
+}
+
+.button1 {
+  background-color: #252525;
+  border: none;
+  color: white;
+  width: 360px;
+  font-weight: 700;
+  border-radius: 2px;
+  font-size: 20px;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.button1:hover {
+  border: none;
+  background-color: #F14635;
+  transition: 0.4s;
+}
+
+.button2 {
+  background-color: #252525;
+  border: none;
+  color: white;
+  width: 360px;
+  font-weight: 700;
+  border-radius: 2px;
+  font-size: 20px;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.button2:hover {
+  border: none;
+  background-color: #F14635;
+  transition: 0.4s;
+}
+
+.astan {
+  text-align: center;
+  background-color: white;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  border-radius: 2px;
+}
+
+.box-text {
+  display: flex;
+  height: 200px;
+  justify-content: space-around;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.box-text-img {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  text-align: center;
+}
+
+.box-text-img__image {
+  align-self: center;
+  height: 100px;
+  width: 100px;
+}
+
+.box-text-img__text {
+  font-weight: 700;
+}
+
+.box-rules {
+  height: 300px;
+  display: flex;
+  border-radius: 2px;
+  justify-content: space-between;
+}
+
+.box-rules-text {
+  background-color: white;
+  width: 545px;
+  color: black;
+  align-self: center;
+  height: 300px;
+  font-size: 25px;
+}
+
+.box-rules__text {
+  margin-top: 50px;
+}
+
+.box-rules-education {
+  background-color: #252525;
+  width: 545px;
+}
+
+.box-rules__text1 {
+  margin-top: 50px;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+.popup {
+  text-align: center;
+  position: fixed;
+  align-self: center;
+  height: 20rem;
+  margin-top: -50px;
+  width: 500px;
+  background-color: #252525;
+  display: none;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.close {
+  position: absolute;
+  right: 0.5rem;
+  color: #969696;
+  font-size: 35px;
+  font-weight: 200;
+  box-shadow: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.popup1 {
+  text-align: center;
+  position: fixed;
+  align-self: center;
+  height: 20rem;
+  margin-top: -50px;
+  width: 500px;
+  background-color: #252525;
+  display: none;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.popup2 {
+  text-align: center;
+  position: fixed;
+  align-self: center;
+  height: 20rem;
+  margin-top: -50px;
+  width: 500px;
+  background-color: #252525;
+  display: none;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.popup__text {
+  margin-top: 10px;
+  color: #969696;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+/*Stylesheet*/
+
+.overlay {
+  height:100%;
+  width:100%;
+  position:absolute;
+  background-color:rgba(0,0,0,0.3);
+  z-index:0;
+  display:none;
+}
+.insta-text
+{
+  font-weight:700;
+  color:black;
+}
+.vk
+{
+  height:30px;
+  width:30px;
+}
+.foot
+{
+  right: 0;
+  position: absolute;
+  margin-right: 200px;
+}
+.tel
+{
+  margin-left:265px;
+  height:20px;
+  width:20px;
+}
+
+/*botts*/
+
+.salam {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.test
+{
+  margin-left: 600px;
+}
+.text:hover {
+  border: 3px solid;
+  border-radius: 5px;
+  color: #F14635;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.date-text{
+  font-weight:700;
+  color:black;
+  margin-left: 310px;
+}

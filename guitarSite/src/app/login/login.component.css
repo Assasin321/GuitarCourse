@@ -1,0 +1,16 @@
+.registForm{
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.registForm input{
+  margin-bottom: 10px;
+}
+.btn{
+  background-color: #F14635;
+  border: 3px solid #F14635;
+}
+
+.div{
+  height: 600px;
+}
