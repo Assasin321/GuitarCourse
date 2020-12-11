@@ -1,0 +1,9 @@
+<div *ngFor="let lesson of lessService.lessons" class="container">
+  <h4>
+    <a [routerLink]="['/lessons',lesson.id]">
+      {{lesson.title}}
+    </a>
+  </h4>
+</div>
+
+<router-outlet></router-outlet>

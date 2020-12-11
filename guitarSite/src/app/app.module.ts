@@ -11,6 +11,8 @@ import {StyleDirective} from './directives/style.directive';
 import {SharedService} from './shared.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { LessonComponent } from './lesson/lesson.component';
+import { LessonsComponent } from './lessons/lessons.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import {HttpClientModule} from '@angular/common/http';
     MainPageComponent,
     AboutComponent,
     LoginComponent,
-    StyleDirective
+    StyleDirective,
+    LessonComponent,
+    LessonsComponent
   ],
   imports: [
     BrowserModule,

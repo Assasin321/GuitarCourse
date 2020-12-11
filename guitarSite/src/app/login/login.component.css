@@ -6,11 +6,58 @@
 .registForm input{
   margin-bottom: 10px;
 }
+.loginForm input{
+  margin-bottom: 10px;
+}
 .btn{
   background-color: #F14635;
   border: 3px solid #F14635;
+  width: 200px;
+  margin-left: 50px;
+
 }
 
-.div{
+.registration{
   height: 600px;
+  border: 3px solid red;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.login{
+  border: 3px solid red;
+  width: 300px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.login-text{
+  text-align: center;
+}
+.login_button{
+  border: none;
+  background-color: transparent;
+  margin-left: 75px;
+}
+.regbutton{
+  margin-left: 100px;
+}
+.registration_button{
+  border: none;
+  background-color: transparent;
+  margin-left: 145px;
+
+}
+.exit{
+  margin-left: 900px;
+  text-decoration: none;
+  color: black;
+}
+.exit:hover{
+  color: #F14635;
+}
+.lesson{
+  height: 580px;
 }

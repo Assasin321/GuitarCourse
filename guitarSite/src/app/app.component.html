@@ -12,9 +12,9 @@
 <div class="overlay"></div>
 <header>
   <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-    <div class="container">
+    <div class="container"  >
       <a  routerLink="/" ><img src="assets/img/guitar.png"  alt="Alternate Text" class="header-img" /></a>
-      <a class="header-text" routerLink="/" >Astan Pro Guitar Course</a>
+      <a class="header-text" routerLink="/" (click)="otherVisible()" >Astan Pro Guitar Course</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
               aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,11 +22,12 @@
       <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
         <ul class="navbar-nav flex-grow-1">
           <li class="nav-item">
-            <a class=" header-text" routerLink="/about">Программа Курса</a>
+            <a class=" header-text" routerLink="/about" (click)="otherVisible()" >Программа Курса</a>
           </li>
-          <li class="nav-item ">
-            <a class="header-text head test" routerLink="/login"><span class="text">Регистрация</span></a>
+          <li class="nav-item" *ngIf="!unVisible" >
+            <a class="header-text head test"   routerLink="/login" (click)="onVisible()"  ><span class="text">Вход</span></a>
           </li>
+
         </ul>
       </div>
     </div>

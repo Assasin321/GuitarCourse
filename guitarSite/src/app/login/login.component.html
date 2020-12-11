@@ -1,22 +1,31 @@
 <div class="container">
-  <div class="div">
-    <h1>Регистрация</h1>
-    <form class="registForm"  [formGroup]="form" (ngSubmit)="addUser()">
-      <input type="text" class="form-control" formControlName="userFirstName" placeholder="Имя">
-      <input type="text" class="form-control" formControlName="userLastName" placeholder="Фамилия">
-      <input type="email" class="form-control" formControlName="userEmail" placeholder="Почта">
-      <input type="password" class="form-control" formControlName="userPassword" placeholder="Пароль">
-      <button class="btn btn-primary" type="submit"  [disabled]="form.invalid">Регистрация</button>
-    </form>
-  </div>
-  <div class="div">
-    <h1>Вход</h1>
-    <form class="registForm"  [formGroup]="form1" (ngSubmit)="login()">
+  <div class="login" *ngIf="!isRegistration && !isLogin" >
+    <h1 class="login-text">Вход</h1>
+    <form class="loginForm"  [formGroup]="form1" (ngSubmit)="login()" >
       <input type="email" class="form-control" formControlName="userLoginEmail" placeholder="Почта">
       <input type="password" class="form-control" formControlName="userLoginPassword" placeholder="Пароль">
-      <button class="btn btn-primary" type="submit"  [disabled]="form1.invalid">Войти</button>
+      <button class="btn btn-primary" type="submit"
+              [disabled]="form1.invalid" >Войти</button>
     </form>
+    <button class="login_button" (click)="isRegistration = !isRegistration">У вас нет аккаунта?</button>
   </div>
+
+    <div class="registration" *ngIf="isRegistration && !isLogin" >
+      <h1 class="login-text">Регистрация</h1>
+      <form class="registForm"  [formGroup]="form" (ngSubmit)="addUser()">
+        <input type="text" class="form-control" formControlName="userFirstName" placeholder="Имя">
+        <input type="text" class="form-control" formControlName="userLastName" placeholder="Фамилия">
+        <input type="email" class="form-control" formControlName="userEmail" placeholder="Почта">
+        <input type="password" class="form-control" formControlName="userPassword" placeholder="Пароль">
+        <button class="btn btn-primary regbutton" type="submit" [disabled]="form.invalid">Регистрация</button>
+      </form>
+      <button class="registration_button" (click)="isRegistration = !isRegistration"  >У меня есть аккаунт</button>
+    </div>
+
+    <div *ngIf="isLogin" class="lesson">
+      <a class="header-text exit" href="#">Выход из аккаунта {{loginName}}</a>
+
+    </div>
 
 </div>
 

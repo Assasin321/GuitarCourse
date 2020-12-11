@@ -1,6 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {SharedService} from '../shared.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Lessons} from '../shared/lessons';
+import {LessonComponent} from '../lesson/lesson.component';
+import {LessonsService} from '../lessons.service';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,17 +13,24 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+
   form: FormGroup;
   form1: FormGroup;
-  constructor(private service: SharedService) { }
-
+  constructor(private service: SharedService,
+              private router: Router
+              ) { }
   @Input() user: any;
   UserId: string;
   UserFirstName: string;
   UserLastName: string;
   UserLogin: string;
   UserPassword: string;
-  isLogin: boolean;
+  isLogin = false;
+  isRegistration = false;
+  loginName = '';
+
+
 
   UsersList: any = [];
   ngOnInit(): void {
@@ -61,6 +73,8 @@ export class LoginComponent implements OnInit {
       alert(res.toString());
     });
     this.form.reset();
+    this.isLogin = true;
+    this.router.navigate(['/lessons']);
 
   }
 
@@ -82,10 +96,13 @@ export class LoginComponent implements OnInit {
     for (const k in this.UsersList) {
       // tslint:disable-next-line:max-line-length
       if (this.UsersList[k].UserLogin === this.form1.value.userLoginEmail && this.UsersList[k].UserPassword === this.form1.value.userLoginPassword) {
-        alert('добро пожаловать на сайт' + this.UsersList[k].UserFirstName);
+        alert('добро пожаловать на сайт ' + this.UsersList[k].UserFirstName);
+        this.loginName = this.UsersList[k].UserFirstName;
         this.isLogin = true;
         break;
-      } else if (this.UsersList[k].UserLogin === this.form1.value.userLoginEmail && this.UsersList[k].UserPassword !== this.form1.value.userLoginPassword) {
+      }
+      else if (this.UsersList[k].UserLogin === this.form1.value.userLoginEmail &&
+        this.UsersList[k].UserPassword !== this.form1.value.userLoginPassword) {
         this.isLogin = false;
       } else {
         this.isLogin = false;
@@ -98,7 +115,14 @@ export class LoginComponent implements OnInit {
     }
     else
     {
+      this.router.navigate(['/lessons']);
       this.form1.reset();
     }
   }
+
+
+
+
+
+
 }
