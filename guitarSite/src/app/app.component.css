@@ -272,6 +272,10 @@ body {
 {
   margin-left: 600px;
 }
+.test1
+{
+  margin-left: 500px;
+}
 .text:hover {
   border: 3px solid;
   border-radius: 5px;

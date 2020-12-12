@@ -1,4 +1,43 @@
 .lesson{
   margin-left: 200px;
   height: 600px;
+  width: 1040px;
+}
+.lesson_buttons{
+  margin-left: 365px;
+  margin-top: 5px;
+}
+
+.lesson_buttons button{
+  margin-left: 5px;
+  width: 200px;
+  text-align: center;
+}
+.btn_back{
+  margin-left: 40px;
+  font-size: 20px;
+  width: 100px;
+  border: 3px solid #F14635;
+  color: #F14635;
+  border-radius: 5px;
+
+}
+
+.lesson_title{
+  margin-left: 500px;
+  color: #F14635;
+}
+.video{
+  margin-left: 300px;
+  margin-right: 300px;
+  border: 3px solid #F14635 ;
+  border-radius: 5px;
+}
+.lesson_info{
+  font-size: 20px;
+  color: #F14635;
+}
+
+.lesson_info_title{
+  color: #F14635;
 }

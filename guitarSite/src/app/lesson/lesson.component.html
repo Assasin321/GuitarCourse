@@ -1,13 +1,17 @@
 <div class="lesson">
-  <button class="btn" routerLink="/lessons">Back</button>
-  <h1>{{lesson.title}}</h1>
-  <div>{{lesson.info}}</div>
+  <button class="btn_back" routerLink="/lessons">Назад</button>
+  <h1 class="lesson_title">{{lesson.title}}</h1>
 
 
-
-
-
-  <button class="btn btn-danger" (click)="previousPost()">Previous</button>
-  <button class="btn btn-danger" (click)="nextPost()">Next</button>
+  <video [src]="lesson.videoUrl" controls height="300px" width="530px" class="video">
+    <source  type="video/mp4" >
+  </video>
+  <br>
+  <h1 class="lesson_info_title">Информация:</h1>
+  <span class="lesson_info">{{lesson.info}}</span>
+  <div class="lesson_buttons">
+  <button class="btn btn-danger" (click)="previousPost()">Предыдущий урок</button>
+  <button class="btn btn-danger" (click)="nextPost()">Следующий урок</button>
+  </div>
 
 </div>

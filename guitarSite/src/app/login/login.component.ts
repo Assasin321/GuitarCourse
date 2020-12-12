@@ -70,11 +70,11 @@ export class LoginComponent implements OnInit {
       UserPassword: this.form.value.userPassword};
 
     this.service.addUser(val).subscribe(res => {
-      alert(res.toString());
+      alert('Вы зарегестрированы ' + val.UserFirstName + '\n' + 'Войдите через логин');
+      this.loadUserList();
     });
     this.form.reset();
-    this.isLogin = true;
-    this.router.navigate(['/lessons']);
+    this.router.navigate(['/login']);
 
   }
 
@@ -92,24 +92,27 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
+    this.loadUserList();
     // tslint:disable-next-line:forin
     for (const k in this.UsersList) {
       // tslint:disable-next-line:max-line-length
       if (this.UsersList[k].UserLogin === this.form1.value.userLoginEmail && this.UsersList[k].UserPassword === this.form1.value.userLoginPassword) {
         alert('добро пожаловать на сайт ' + this.UsersList[k].UserFirstName);
-        this.loginName = this.UsersList[k].UserFirstName;
+        this.service.loginName = this.UsersList[k].UserFirstName;
         this.isLogin = true;
+        this.service.isLog = true;
+        console.log(this.service.isLog);
         break;
       }
       else if (this.UsersList[k].UserLogin === this.form1.value.userLoginEmail &&
         this.UsersList[k].UserPassword !== this.form1.value.userLoginPassword) {
-        this.isLogin = false;
+        this.service.isLog = false;
       } else {
-        this.isLogin = false;
+        this.service.isLog = false;
       }
     }
 
-    if (!this.isLogin) {
+    if (!this.service.isLog) {
       this.form1.reset();
       alert('Попробуйте еще раз!!!');
     }
@@ -118,6 +121,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/lessons']);
       this.form1.reset();
     }
+  }
+
+  loginChecker(): boolean{
+    return this.service.isLog;
   }
 
 

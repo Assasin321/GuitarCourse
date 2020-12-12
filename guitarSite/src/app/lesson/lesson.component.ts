@@ -26,13 +26,28 @@ export class LessonComponent implements OnInit {
   }
 
   nextPost(): void {
-    this.next = this.lesson.id + 1;
-    this.router.navigate(['/lessons', this.next]);
+    if(this.next == 7)
+    {
+      this.next = 1;
+      this.router.navigate(['/lessons']);
+    }
+    else {
+      this.next = this.lesson.id + 1;
+      this.router.navigate(['/lessons', this.next]);
+    }
+
   }
 
   previousPost(): void {
-    this.previous = this.lesson.id - 1;
-    this.router.navigate(['/lessons', this.previous]);
+    if(this.previous == 1)
+    {
+      this.router.navigate(['/lessons']);
+    }
+    else {
+      this.previous = this.lesson.id - 1;
+      this.router.navigate(['/lessons', this.previous]);
+    }
+
   }
 
 

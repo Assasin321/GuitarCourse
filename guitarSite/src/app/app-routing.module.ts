@@ -6,14 +6,15 @@ import {LoginComponent} from './login/login.component';
 import {MainPageComponent} from './main-page/main-page.component';
 import {LessonsComponent} from './lessons/lessons.component';
 import {LessonComponent} from './lesson/lesson.component';
+import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'login', component: LoginComponent},
   {path: '', component: MainPageComponent},
   {path: 'main', component: AppComponent},
-  {path: 'lessons/:id', component: LessonComponent},
-  {path: 'lessons', component: LessonsComponent},
+  {path: 'lessons/:id', component: LessonComponent, canActivate: [AuthGuard]},
+  {path: 'lessons', component: LessonsComponent , canActivate: [AuthGuard]},
 
 ];
 

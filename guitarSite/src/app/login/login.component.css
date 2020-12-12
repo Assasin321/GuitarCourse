@@ -19,7 +19,6 @@
 
 .registration{
   height: 600px;
-  border: 3px solid red;
   width: 450px;
   margin-left: auto;
   margin-right: auto;
@@ -27,7 +26,6 @@
 
 
 .login{
-  border: 3px solid red;
   width: 300px;
   height: 600px;
   margin-left: auto;

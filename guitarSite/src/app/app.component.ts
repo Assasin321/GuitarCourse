@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {LoginComponent} from './login/login.component';
+import {SharedService} from './shared.service';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +13,18 @@ export class AppComponent implements OnInit {
   date: Date = new Date();
   unVisible = false;
   other = false;
+  loginName = '';
 
 
 
 
-  constructor() {
+  constructor(private service: SharedService) {
   }
 
 
-  onVisible():void {
+  onVisible(): void {
 
-    if(!this.unVisible )
+    if (!this.unVisible )
     {
       this.unVisible = true;
     }
@@ -40,6 +42,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  checkLogin(): boolean{
+    this.checkName();
+    return this.service.isLog;
+
+  }
+
+  checkName(): string{
+    this.loginName = this.service.loginName;
+    return this.loginName;
   }
 
 

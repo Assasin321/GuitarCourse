@@ -7,6 +7,8 @@ import {Observable} from 'rxjs';
 })
 export class SharedService {
   readonly APIUrl = 'http://localhost:60051/api';
+  public isLog = false;
+  public loginName = '';
   constructor(private http: HttpClient) { }
 
   getUsersList(): Observable<any[]> {

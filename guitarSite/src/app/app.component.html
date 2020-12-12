@@ -24,8 +24,14 @@
           <li class="nav-item">
             <a class=" header-text" routerLink="/about" (click)="otherVisible()" >Программа Курса</a>
           </li>
-          <li class="nav-item" *ngIf="!unVisible" >
+          <li class="nav-item" *ngIf="checkLogin()" >
+            <a class="header-text head "  routerLink="/lessons" >Уроки</a>
+          </li>
+          <li class="nav-item" *ngIf="!checkLogin()" >
             <a class="header-text head test"   routerLink="/login" (click)="onVisible()"  ><span class="text">Вход</span></a>
+          </li>
+          <li class="nav-item" *ngIf="checkLogin()" >
+            <a class="header-text head test1"   href="#" ><span class="text">Выход {{loginName}}</span></a>
           </li>
 
         </ul>
